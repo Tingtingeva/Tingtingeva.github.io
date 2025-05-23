@@ -80,7 +80,15 @@
 		<nav class="header-smart-menu">
 			
 				
+					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+				
+			
+				
 					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+				
+			
+				
+					<a q-on="click: openSlider(e, 'GitHub')" href="javascript:void(0)">[object Object]</a>
 				
 			
 		</nav>
@@ -454,13 +462,29 @@
       
       
     
+      
+      
+      
+    
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'GitHub')"><a href="javascript:void(0)" q-class="active:GitHub">[object Object]</a></li>
       
         
     </ul>
@@ -468,6 +492,10 @@
   <div class="tools-wrap">
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+    	</section>
     
 
     
