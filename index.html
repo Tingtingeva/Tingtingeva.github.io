@@ -87,16 +87,6 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					
-						<a class="github" href="/Tingtingeva" 
-												title="GitHub" ><i class="icon-github"></i></a>
-					
-				
-					
-						<a class="mail" href="/1055138511@qq.com" 
-												title="Email" ><i class="icon-mail"></i></a>
-					
-				
 			</div>
 		
 		</nav>
@@ -137,16 +127,6 @@
 			
 			<nav class="header-nav">
 				<div class="social">
-					
-						
-						<a class="github" target="_blank" 
-							href="/Tingtingeva" title="GitHub"><i class="icon-github"></i></a>
-						
-					
-						
-						<a class="mail" target="_blank" 
-							href="/1055138511@qq.com" title="Email"><i class="icon-mail"></i></a>
-						
 					
 				</div>
 			</nav>
@@ -394,6 +374,23 @@
 
 
 <!--  -->
+
+<script>
+  /* 标签页标题切换 */
+  var originTitle = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+      titleTime = setTimeout(function () {
+        document.title = originTitle;
+      }, 2000);
+    }
+  });
+</script>
 
 
     
