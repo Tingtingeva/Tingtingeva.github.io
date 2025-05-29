@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p4.png">
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/27/2-18GHz%E7%AE%80%E6%98%93%E7%9F%A2%E9%87%8F%E6%89%AB%E9%A2%91%E4%BB%AA/g">
 <meta property="article:published_time" content="2025-05-24T12:30:01.000Z">
-<meta property="article:modified_time" content="2025-05-29T07:29:20.263Z">
+<meta property="article:modified_time" content="2025-05-29T07:33:20.739Z">
 <meta property="article:author" content="Eva">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p1.png">
@@ -297,7 +297,7 @@
 <p>本振泄露距离中频信号远，中频滤波器可以将其完全滤除，因此本振滤波器可使用阶数较低微带滤波器，使得整个下变频通道可集成为一个模块，大大减小了尺寸。</p>
 <p>混频后，先利低通滤波器将<strong>本振泄露、射频泄露以及高频的交调分量</strong>滤除，再用中心频率为2.1 GHz 的带通滤波器将信号滤出。增益完全分配至中频频段，大降低成本，并通过数控衰减器调整中频输出功率，方便仪器测量。</p>
 <h3 id="（二）利用Systemvue进行方案仿真"><a href="#（二）利用Systemvue进行方案仿真" class="headerlink" title="（二）利用Systemvue进行方案仿真"></a>（二）利用Systemvue进行方案仿真</h3><p>链路模型包含了对极鳍线过渡结构，考虑过渡结构带来的损耗，在模型中用固定的衰减器表示。<font color=red>应保证完成指标的同时，留有调整的余量。</font>链路节点增益，输入输出功率仿真（可看P1dB）如下图。</p>
-<p><code>链路1dB压缩点：</code><strong><code>从后往前倒推输入功率</code></strong><code>，看哪一级最先压缩。最终链路的P1dB，就是最小的那个输入功率对应的位置。</code></p>
+<p><code>链路1dB压缩点：从后往前倒推输入功率,看哪一级最先压缩。最终链路的P1dB，就是最小的那个输入功率对应的位置。</code></p>
 <p><img src="/2025/05/27/2-18GHz%E7%AE%80%E6%98%93%E7%9F%A2%E9%87%8F%E6%89%AB%E9%A2%91%E4%BB%AA/g" alt="1"></p>
 <p>功放测试前端对线性度要求较高。输出1 dB压缩点只能从<strong>功率压缩</strong>的角度反应射频链路的线性度，用Systemvue 对整个上下变频通道的<strong>线性度</strong>进行仿真，搭建仿真电路包含<strong>基带</strong>信号发生电路和<strong>射频</strong>链路。</p>
 <p>①首先设计<strong>基带</strong>信号：中心频率为8 GHz，带宽40 MHz，调制方式选择QPSK，基带信功率为设定为-5.84 dBm。仿真星座图清晰，EVM 约为0.7814%。</p>
