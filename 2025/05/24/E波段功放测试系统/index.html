@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p4.png">
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/27/2-18GHz%E7%AE%80%E6%98%93%E7%9F%A2%E9%87%8F%E6%89%AB%E9%A2%91%E4%BB%AA/g">
 <meta property="article:published_time" content="2025-05-24T12:30:01.000Z">
-<meta property="article:modified_time" content="2025-05-29T07:33:20.739Z">
+<meta property="article:modified_time" content="2025-05-29T08:15:40.626Z">
 <meta property="article:author" content="Eva">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p1.png">
@@ -188,7 +188,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.4k字</span>
+      <span class="post-count">2k字</span>
     </span>
   </span>
 
@@ -197,7 +197,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
+      <span class="post-count">7分</span>
     </span>
   </span>
 </div>
@@ -303,8 +303,22 @@
 <p>①首先设计<strong>基带</strong>信号：中心频率为8 GHz，带宽40 MHz，调制方式选择QPSK，基带信功率为设定为-5.84 dBm。仿真星座图清晰，EVM 约为0.7814%。</p>
 <p>②将电路中的RF_LINK 控件指向<strong>上变频通道</strong>的电路。40Hz 带宽的QPSK 调制信号进行仿真，在通道输出功率为17.31 dBm (足够驱动功放至P1dB)时，链路的EVM 为0.8058%，在该功率输出下，上变频通道几乎对信号不产生恶化。</p>
 <p>③将<strong>上下变频通道</strong>集成在一起，利用下变频通道的衰减器使输入下变频通道的功率小于-10 dBm。能在功率谱图中看到，信号已经被变频到2.1 GHz，带宽40 MHz，在4.627 dBm 输出的情况下，星座图分布清晰可见，EVM 为0.8544%。</p>
-<p>按上述方案设计，可以<strong>保证通道****EVM</strong> <strong>良好</strong>。当应用在功放测试前端时，对测试结果的影响可以忽略不计。</p>
-<h3 id="（三）无源电路设计"><a href="#（三）无源电路设计" class="headerlink" title="（三）无源电路设计"></a>（三）无源电路设计</h3><h3 id="（四）电路实现及测试结果"><a href="#（四）电路实现及测试结果" class="headerlink" title="（四）电路实现及测试结果"></a>（四）电路实现及测试结果</h3><h2 id="二、测试前端设计"><a href="#二、测试前端设计" class="headerlink" title="二、测试前端设计"></a>二、测试前端设计</h2><h3 id="（一）测试系统配置"><a href="#（一）测试系统配置" class="headerlink" title="（一）测试系统配置"></a>（一）测试系统配置</h3><h3 id="（二）方案实现"><a href="#（二）方案实现" class="headerlink" title="（二）方案实现"></a>（二）方案实现</h3><h3 id="（三）测试"><a href="#（三）测试" class="headerlink" title="（三）测试"></a>（三）测试</h3>
+<p>按上述方案设计，可以<strong>保证通道</strong>EVM <strong>良好</strong>。当应用在功放测试前端时，对测试结果的影响可以忽略不计。</p>
+<h3 id="（三）无源电路设计"><a href="#（三）无源电路设计" class="headerlink" title="（三）无源电路设计"></a>（三）无源电路设计</h3><h4 id="1、波导滤波器"><a href="#1、波导滤波器" class="headerlink" title="1、波导滤波器"></a>1、波导滤波器</h4><p>波导滤波器对加工精度要求高，加工成本高，但其优点是<strong>设计简单，功率容量大，Q值高插入损耗小</strong>，在保证加工精度的情况下能实现<strong>插入损耗＜1 dB</strong>。上变频通道中两波导滤波器的设计使用<strong>散射参数法</strong>，通过插入<strong>电感膜片</strong>来实现，并加入R&#x3D;0.3mm 的倒角，以减小仿真误差。</p>
+<p><strong>（1）抑制混频杂散的81~86 GHz滤波器</strong>：主要滤除LO,LO＋2IF,LO-IF。</p>
+<p>采用WR-10。实物带内插损小于1dB，带内回波损耗优于10 dB。对89 GHz 以上的信号抑制约为45 dBc，对78 GHz 以下的信号抑制约为65 dBc。（满足30dBc本振抑制）</p>
+<p>**（2）73<del>78 GHz 的本振滤波器：**滤除6倍频后的谐波，主要5次，7次。七次谐波的频率范围为：85.05</del>91 GHz。 <font color=red><strong>7次谐波有部分包含在81~86 GHz 频带内，经混频器泄露之后，后面的滤波器无法滤除，需要在混频器前尽可能抑制。</strong></font></p>
+<p>采用WR-12。带内插损小于1 dB，回波损耗优于18 dB。对7次谐波的抑制优于45 dBc，对5次谐波的抑制在70 dBc 以上。</p>
+<h4 id="2、微带滤波器及其转换电路"><a href="#2、微带滤波器及其转换电路" class="headerlink" title="2、微带滤波器及其转换电路"></a>2、微带滤波器及其转换电路</h4><p>一些频率较低，指标要求较低的滤波器是基于微带传输线的。设计简单，加工成本较低，且相较于波导滤波器有更小的体积。</p>
+<p>1）12.15~14 GHz 滤波器：抑制频率源的二次谐波，同时用于上下变频通道的基波本振滤波。</p>
+<p>由于平行耦合线滤波器的奇偶模相速不一致，从而导致在<strong>2f****0</strong> 处有寄生通带，这使得其在频率变换电路中的使用受到限制。本课题将在<strong>平行耦合线</strong>的基础上采用<strong>过耦合结构</strong>抑制二次谐波的通带。</p>
+<p>（过耦合结构通过改变奇偶模等效电长度，实现在<strong>2f0</strong> <strong>处引入零点</strong>，2f0 处的|S21|&#x3D;0）</p>
+<p><strong>0.127 mm</strong> <strong>的****Al2O3</strong> <strong>基板</strong>实现：滤波器工作频段为12~14 GHz，带内回波损耗大于20 dB，对二次谐波的抑制大于40 dBc。</p>
+<ol start="2">
+<li>8 GHz 滤波器设计：保证频率源提供的8GHz中频频谱纯净，同时对二次谐波有抑制</li>
+<li></li>
+</ol>
+<h3 id="（四）电路实现及测试结果"><a href="#（四）电路实现及测试结果" class="headerlink" title="（四）电路实现及测试结果"></a>（四）电路实现及测试结果</h3><h2 id="二、测试前端设计"><a href="#二、测试前端设计" class="headerlink" title="二、测试前端设计"></a>二、测试前端设计</h2><h3 id="（一）测试系统配置"><a href="#（一）测试系统配置" class="headerlink" title="（一）测试系统配置"></a>（一）测试系统配置</h3><h3 id="（二）方案实现"><a href="#（二）方案实现" class="headerlink" title="（二）方案实现"></a>（二）方案实现</h3><h3 id="（三）测试"><a href="#（三）测试" class="headerlink" title="（三）测试"></a>（三）测试</h3>
     
 
     
