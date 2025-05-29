@@ -21,8 +21,9 @@
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p2.png">
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p3.png">
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p4.png">
+<meta property="og:image" content="https://tingtingeva.github.io/2025/05/27/2-18GHz%E7%AE%80%E6%98%93%E7%9F%A2%E9%87%8F%E6%89%AB%E9%A2%91%E4%BB%AA/g">
 <meta property="article:published_time" content="2025-05-24T12:30:01.000Z">
-<meta property="article:modified_time" content="2025-05-29T05:49:37.329Z">
+<meta property="article:modified_time" content="2025-05-29T06:39:12.704Z">
 <meta property="article:author" content="Eva">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p1.png">
@@ -187,7 +188,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">749字</span>
+      <span class="post-count">1.4k字</span>
     </span>
   </span>
 
@@ -196,7 +197,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -293,7 +294,17 @@
 <p>上变频通道增益分配全在毫米波频段。若在中频阶段就分配较大增益，会使链路的1 dB 压缩点受混频器限制。由于将增益过多分配至毫米波频段，容易造成自激现象，因此将功率增益链路分为两个模块，方便调试过程中做端口匹配。</p>
 <p>上变频本振频率的范围为73 GHz至78 GHz ，设计的滤波器应该对离81~86 GHz 信号最近的78 GHz 进行抑制，另外还需要考虑到对输出信号的杂散抑制，特别需要考虑三阶交调(LO±2*IF)信号。</p>
 <h4 id="2、下变频通道"><a href="#2、下变频通道" class="headerlink" title="2、下变频通道"></a>2、下变频通道</h4><p><img src="/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p4.png" alt="1"></p>
-<h3 id="（二）利用Systemvue进行方案仿真"><a href="#（二）利用Systemvue进行方案仿真" class="headerlink" title="（二）利用Systemvue进行方案仿真"></a>（二）利用Systemvue进行方案仿真</h3><h3 id="（三）无源电路设计"><a href="#（三）无源电路设计" class="headerlink" title="（三）无源电路设计"></a>（三）无源电路设计</h3><h3 id="（四）电路实现及测试结果"><a href="#（四）电路实现及测试结果" class="headerlink" title="（四）电路实现及测试结果"></a>（四）电路实现及测试结果</h3><h2 id="二、测试前端设计"><a href="#二、测试前端设计" class="headerlink" title="二、测试前端设计"></a>二、测试前端设计</h2><h3 id="（一）测试系统配置"><a href="#（一）测试系统配置" class="headerlink" title="（一）测试系统配置"></a>（一）测试系统配置</h3><h3 id="（二）方案实现"><a href="#（二）方案实现" class="headerlink" title="（二）方案实现"></a>（二）方案实现</h3><h3 id="（三）测试"><a href="#（三）测试" class="headerlink" title="（三）测试"></a>（三）测试</h3>
+<p>本振泄露距离中频信号远，中频滤波器可以将其完全滤除，因此本振滤波器可使用阶数较低微带滤波器，使得整个下变频通道可集成为一个模块，大大减小了尺寸。</p>
+<p>混频后，先利低通滤波器将<strong>本振泄露、射频泄露以及高频的交调分量</strong>滤除，再用中心频率为2.1 GHz 的带通滤波器将信号滤出。增益完全分配至中频频段，大降低成本，并通过数控衰减器调整中频输出功率，方便仪器测量。</p>
+<h3 id="（二）利用Systemvue进行方案仿真"><a href="#（二）利用Systemvue进行方案仿真" class="headerlink" title="（二）利用Systemvue进行方案仿真"></a>（二）利用Systemvue进行方案仿真</h3><p>链路模型包含了对极鳍线过渡结构，考虑过渡结构带来的损耗，在模型中用固定的衰减器表示。<font color=red>应保证完成指标的同时，留有调整的余量。</font>链路节点增益，输入输出功率仿真（可看P1dB）如下图。</p>
+<p><font color=orange><code>链路1dB压缩点：**从后往前倒推**输入功率，看哪一级最先压缩。最终链路的P1dB，就是最小的那个输入功率对应的位置。</code></font></p>
+<p><img src="/2025/05/27/2-18GHz%E7%AE%80%E6%98%93%E7%9F%A2%E9%87%8F%E6%89%AB%E9%A2%91%E4%BB%AA/g" alt="1"></p>
+<p>功放测试前端对线性度要求较高。输出1 dB压缩点只能从<strong>功率压缩</strong>的角度反应射频链路的线性度，用Systemvue 对整个上下变频通道的<strong>线性度</strong>进行仿真，搭建仿真电路包含<strong>基带</strong>信号发生电路和<strong>射频</strong>链路。</p>
+<p>①首先设计<strong>基带</strong>信号：中心频率为8 GHz，带宽40 MHz，调制方式选择QPSK，基带信功率为设定为-5.84 dBm。仿真星座图清晰，EVM 约为0.7814%。</p>
+<p>②将电路中的RF_LINK 控件指向<strong>上变频通道</strong>的电路。40Hz 带宽的QPSK 调制信号进行仿真，在通道输出功率为17.31 dBm (足够驱动功放至P1dB)时，链路的EVM 为0.8058%，在该功率输出下，上变频通道几乎对信号不产生恶化。</p>
+<p>③将<strong>上下变频通道</strong>集成在一起，利用下变频通道的衰减器使输入下变频通道的功率小于-10 dBm。能在功率谱图中看到，信号已经被变频到2.1 GHz，带宽40 MHz，在4.627 dBm 输出的情况下，星座图分布清晰可见，EVM 为0.8544%。</p>
+<p>按上述方案设计，可以<strong>保证通道****EVM</strong> <strong>良好</strong>。当应用在功放测试前端时，对测试结果的影响可以忽略不计。</p>
+<h3 id="（三）无源电路设计"><a href="#（三）无源电路设计" class="headerlink" title="（三）无源电路设计"></a>（三）无源电路设计</h3><h3 id="（四）电路实现及测试结果"><a href="#（四）电路实现及测试结果" class="headerlink" title="（四）电路实现及测试结果"></a>（四）电路实现及测试结果</h3><h2 id="二、测试前端设计"><a href="#二、测试前端设计" class="headerlink" title="二、测试前端设计"></a>二、测试前端设计</h2><h3 id="（一）测试系统配置"><a href="#（一）测试系统配置" class="headerlink" title="（一）测试系统配置"></a>（一）测试系统配置</h3><h3 id="（二）方案实现"><a href="#（二）方案实现" class="headerlink" title="（二）方案实现"></a>（二）方案实现</h3><h3 id="（三）测试"><a href="#（三）测试" class="headerlink" title="（三）测试"></a>（三）测试</h3>
     
 
     
