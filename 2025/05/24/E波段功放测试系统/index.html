@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p6.png">
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p7.png">
 <meta property="article:published_time" content="2025-05-24T12:30:01.000Z">
-<meta property="article:modified_time" content="2025-06-03T12:10:35.397Z">
+<meta property="article:modified_time" content="2025-06-03T12:25:57.709Z">
 <meta property="article:author" content="Eva">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p1.png">
@@ -190,7 +190,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.7k字</span>
+      <span class="post-count">2.5k字</span>
     </span>
   </span>
 
@@ -301,10 +301,13 @@
 <h3 id="（二）利用Systemvue进行方案仿真"><a href="#（二）利用Systemvue进行方案仿真" class="headerlink" title="（二）利用Systemvue进行方案仿真"></a>（二）利用Systemvue进行方案仿真</h3><p>链路模型包含了对极鳍线过渡结构，考虑过渡结构带来的损耗，在模型中用固定的衰减器表示。<font color=red>应保证完成指标的同时，留有调整的余量。</font>链路节点增益，输入输出功率仿真（可看P1dB）如下图。</p>
 <p><code>链路1dB压缩点：从后往前倒推输入功率,看哪一级最先压缩。最终链路的P1dB，就是最小的那个输入功率对应的位置。</code></p>
 <p><img src="/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p5.png" alt="1"></p>
-<p>功放测试前端对线性度要求较高。输出1 dB压缩点只能从<strong>功率压缩</strong>的角度反应射频链路的线性度，用Systemvue 对整个上下变频通道的<strong>线性度</strong>进行仿真，搭建仿真电路包含<strong>基带</strong>信号发生电路和<strong>射频</strong>链路。</p>
-<p>①首先设计<strong>基带</strong>信号：中心频率为8 GHz，带宽40 MHz，调制方式选择QPSK，基带信功率为设定为-5.84 dBm。仿真星座图清晰，EVM 约为0.7814%。</p>
-<p>②将电路中的RF_LINK 控件指向<strong>上变频通道</strong>的电路。40Hz 带宽的QPSK 调制信号进行仿真，在通道输出功率为17.31 dBm (足够驱动功放至P1dB)时，链路的EVM 为0.8058%，在该功率输出下，上变频通道几乎对信号不产生恶化。</p>
-<p>③将<strong>上下变频通道</strong>集成在一起，利用下变频通道的衰减器使输入下变频通道的功率小于-10 dBm。能在功率谱图中看到，信号已经被变频到2.1 GHz，带宽40 MHz，在4.627 dBm 输出的情况下，星座图分布清晰可见，EVM 为0.8544%。</p>
+<p>$功放测试前端对线性度要求较高。输出1 dB压缩点只能从<strong>功率压缩</strong>的角度反应射频链路的线性度，用Systemvue 对整个上下变频通道的<strong>线性度</strong>进行仿真，搭建仿真电路包含<strong>基带</strong>信号发生电路和<strong>射频</strong>链路。$</p>
+<!--①首先设计**基带**信号：中心频率为8 GHz，带宽40 MHz，调制方式选择QPSK，基带信功率为设定为-5.84 dBm。仿真星座图清晰，EVM 约为0.7814%。-->
+
+<!--②将电路中的RF_LINK 控件指向**上变频通道**的电路。40Hz 带宽的QPSK 调制信号进行仿真，在通道输出功率为17.31 dBm (足够驱动功放至P1dB)时，链路的EVM 为0.8058%，在该功率输出下，上变频通道几乎对信号不产生恶化。-->
+
+<!--③将**上下变频通道**集成在一起，利用下变频通道的衰减器使输入下变频通道的功率小于-10 dBm。能在功率谱图中看到，信号已经被变频到2.1 GHz，带宽40 MHz，在4.627 dBm 输出的情况下，星座图分布清晰可见，EVM 为0.8544%。-->
+
 <p>按上述方案设计，可以<strong>保证通道</strong>EVM <strong>良好</strong>。当应用在功放测试前端时，对测试结果的影响可以忽略不计。</p>
 <h3 id="（三）无源电路设计"><a href="#（三）无源电路设计" class="headerlink" title="（三）无源电路设计"></a>（三）无源电路设计</h3><h4 id="1、波导滤波器"><a href="#1、波导滤波器" class="headerlink" title="1、波导滤波器"></a>1、波导滤波器</h4><p>波导滤波器对加工精度要求高，加工成本高，但其优点是<strong>设计简单，功率容量大，Q值高插入损耗小</strong>，在保证加工精度的情况下能实现<strong>插入损耗＜1 dB</strong>。上变频通道中两波导滤波器的设计使用<strong>散射参数法</strong>，通过插入<strong>电感膜片</strong>来实现，并加入R&#x3D;0.3mm 的倒角，以减小仿真误差。</p>
 <table>
@@ -344,10 +347,9 @@
 <td align="center">使用<strong>鳍线</strong>结构，其具有插入损耗低、回波损耗大、频带宽和利于模块集成的优点。</td>
 </tr>
 </tbody></table>
-<h3 id="（四）电路实现及测试结果"><a href="#（四）电路实现及测试结果" class="headerlink" title="（四）电路实现及测试结果"></a>（四）电路实现及测试结果</h3><h4 id="1、链路验证"><a href="#1、链路验证" class="headerlink" title="1、链路验证"></a>1、链路验证</h4><p>将设计的无源电路S参数导入ADS进行仿真验证：</p>
-<p>上变频通道<strong>输出81 GHz 信号</strong>时，信号功率和基波本振的七次谐波之间相差约62 dBc，当减小输出信号功率为0 dBm 时，仍可以保证对本振泄露的抑制超过40 dBc，满足对本振泄露抑制大于30 dBc 的指标要求。另外，混频后的三阶交调分量89 GHz 和78GHz 都被抑制在100 dBc 以上。将上下变频通道级联，输出中频为2.1 GHz，整个链路输出频谱纯净，在输出大于0 dBm 的情况下对杂散抑制超过100 dBc。</p>
+<h3 id="（四）电路实现及测试结果"><a href="#（四）电路实现及测试结果" class="headerlink" title="（四）电路实现及测试结果"></a>（四）电路实现及测试结果</h3><h4 id="1、链路验证"><a href="#1、链路验证" class="headerlink" title="1、链路验证"></a>1、链路验证</h4><p><strong>将设计的无源电路S参数导入ADS进行仿真验证：<strong>上变频通道</strong>输出81 GHz 信号</strong>时，信号功率和基波本振的七次谐波之间相差约62 dBc，当减小输出信号功率为0 dBm 时，仍可以保证对本振泄露的抑制超过40 dBc，满足对本振泄露抑制大于30 dBc 的指标要求。另外，混频后的三阶交调分量89 GHz 和78GHz 都被抑制在100 dBc 以上。将上下变频通道级联，输出中频为2.1 GHz，整个链路输出频谱纯净，在输出大于0 dBm 的情况下对杂散抑制超过100 dBc。</p>
 <h4 id="2、上变频通道"><a href="#2、上变频通道" class="headerlink" title="2、上变频通道"></a>2、上变频通道</h4><p><img src="/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p6.png" alt="1"></p>
-<p><strong>（1）本振倍频模块：<strong>基波本振信号由频率源从SMA 接口输入,10 dBm、12.15~13 GHz输入时，输出功率约为14 dBm，到达混频器的信号大小在超过10 dBm，尽管通过腔体滤波器的抑制可以使本振泄露大于30 dBc，但为了保证输出频谱的纯净度，在倍频模块输出端</strong>添加了9 dB*的固定衰减器</strong>。到达混频器的信号大小在0~3 dBm。</p>
+<p><strong>（1）本振倍频模块：<strong>基波本振信号由频率源从SMA 接口输入,10 dBm、12.15~13 GHz输入时，输出功率约为14 dBm，到达混频器的信号大小在超过10 dBm，尽管通过腔体滤波器的抑制可以使本振泄露大于30 dBc，但为了保证输出频谱的纯净度，在倍频模块输出端</strong>添加了9 dB的固定衰减器</strong>。到达混频器的信号大小在0~3 dBm。</p>
 <p>**（2）上混频模块：**8 GHz 的中频信号通过SMA 接头接入模块，经发卡滤波器滤波和数控衰减器后输入混频器；实测的变频损耗约增大了10 dB，发现是混频器芯片仅能用于下变频，将其应用于上变频时，变频损耗会增大，但该芯片的变频损耗在带内平坦度不超过± 1dB，且由于方案设计保证链路增益有富余，因此仍保持设计不变。</p>
 <p>（3）驱动放大模块：为消除级放大器级联可能带来的<strong>自激</strong>现象，<strong>在两个放大器芯片之间添加了吸波材料</strong>。</p>
 <p>（4）上变频通道测试：功放模块功耗较大，腔体设计散热齿帮助<strong>散热</strong>。整个通道固定在铝制金属散热板上，另有统一的供电电路板装配在金属板上。输出信号通过<strong>功率计</strong>对信号大小进行测试。</p>
