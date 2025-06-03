@@ -21,9 +21,13 @@
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p2.png">
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p3.png">
 <meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p4.png">
-<meta property="og:image" content="https://tingtingeva.github.io/2025/05/27/2-18GHz%E7%AE%80%E6%98%93%E7%9F%A2%E9%87%8F%E6%89%AB%E9%A2%91%E4%BB%AA/g">
+<meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p5.png">
+<meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p6.png">
+<meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p6.png">
+<meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p7.png">
+<meta property="og:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p8.png">
 <meta property="article:published_time" content="2025-05-24T12:30:01.000Z">
-<meta property="article:modified_time" content="2025-05-29T08:15:40.626Z">
+<meta property="article:modified_time" content="2025-06-03T09:12:05.170Z">
 <meta property="article:author" content="Eva">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tingtingeva.github.io/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p1.png">
@@ -188,7 +192,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2k字</span>
+      <span class="post-count">2.1k字</span>
     </span>
   </span>
 
@@ -298,7 +302,7 @@
 <p>混频后，先利低通滤波器将<strong>本振泄露、射频泄露以及高频的交调分量</strong>滤除，再用中心频率为2.1 GHz 的带通滤波器将信号滤出。增益完全分配至中频频段，大降低成本，并通过数控衰减器调整中频输出功率，方便仪器测量。</p>
 <h3 id="（二）利用Systemvue进行方案仿真"><a href="#（二）利用Systemvue进行方案仿真" class="headerlink" title="（二）利用Systemvue进行方案仿真"></a>（二）利用Systemvue进行方案仿真</h3><p>链路模型包含了对极鳍线过渡结构，考虑过渡结构带来的损耗，在模型中用固定的衰减器表示。<font color=red>应保证完成指标的同时，留有调整的余量。</font>链路节点增益，输入输出功率仿真（可看P1dB）如下图。</p>
 <p><code>链路1dB压缩点：从后往前倒推输入功率,看哪一级最先压缩。最终链路的P1dB，就是最小的那个输入功率对应的位置。</code></p>
-<p><img src="/2025/05/27/2-18GHz%E7%AE%80%E6%98%93%E7%9F%A2%E9%87%8F%E6%89%AB%E9%A2%91%E4%BB%AA/g" alt="1"></p>
+<p><img src="/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p5.png" alt="1"></p>
 <p>功放测试前端对线性度要求较高。输出1 dB压缩点只能从<strong>功率压缩</strong>的角度反应射频链路的线性度，用Systemvue 对整个上下变频通道的<strong>线性度</strong>进行仿真，搭建仿真电路包含<strong>基带</strong>信号发生电路和<strong>射频</strong>链路。</p>
 <p>①首先设计<strong>基带</strong>信号：中心频率为8 GHz，带宽40 MHz，调制方式选择QPSK，基带信功率为设定为-5.84 dBm。仿真星座图清晰，EVM 约为0.7814%。</p>
 <p>②将电路中的RF_LINK 控件指向<strong>上变频通道</strong>的电路。40Hz 带宽的QPSK 调制信号进行仿真，在通道输出功率为17.31 dBm (足够驱动功放至P1dB)时，链路的EVM 为0.8058%，在该功率输出下，上变频通道几乎对信号不产生恶化。</p>
@@ -306,19 +310,38 @@
 <p>按上述方案设计，可以<strong>保证通道</strong>EVM <strong>良好</strong>。当应用在功放测试前端时，对测试结果的影响可以忽略不计。</p>
 <h3 id="（三）无源电路设计"><a href="#（三）无源电路设计" class="headerlink" title="（三）无源电路设计"></a>（三）无源电路设计</h3><h4 id="1、波导滤波器"><a href="#1、波导滤波器" class="headerlink" title="1、波导滤波器"></a>1、波导滤波器</h4><p>波导滤波器对加工精度要求高，加工成本高，但其优点是<strong>设计简单，功率容量大，Q值高插入损耗小</strong>，在保证加工精度的情况下能实现<strong>插入损耗＜1 dB</strong>。上变频通道中两波导滤波器的设计使用<strong>散射参数法</strong>，通过插入<strong>电感膜片</strong>来实现，并加入R&#x3D;0.3mm 的倒角，以减小仿真误差。</p>
 <p><strong>（1）抑制混频杂散的81~86 GHz滤波器</strong>：主要滤除LO,LO＋2IF,LO-IF。</p>
-<p>采用WR-10。实物带内插损小于1dB，带内回波损耗优于10 dB。对89 GHz 以上的信号抑制约为45 dBc，对78 GHz 以下的信号抑制约为65 dBc。（满足30dBc本振抑制）</p>
-<p>**（2）73<del>78 GHz 的本振滤波器：**滤除6倍频后的谐波，主要5次，7次。七次谐波的频率范围为：85.05</del>91 GHz。 <font color=red><strong>7次谐波有部分包含在81~86 GHz 频带内，经混频器泄露之后，后面的滤波器无法滤除，需要在混频器前尽可能抑制。</strong></font></p>
-<p>采用WR-12。带内插损小于1 dB，回波损耗优于18 dB。对7次谐波的抑制优于45 dBc，对5次谐波的抑制在70 dBc 以上。</p>
+<p>**（2）73-78 GHz 的本振滤波器：**滤除6倍频后的谐波，主要5次，7次谐波。七次谐波的频率范围为：85.05-91 GHz。 <font color=red><strong>7次谐波有部分包含在81-86 GHz 频带内，经混频器泄露之后，后面的滤波器无法滤除，需要在混频器前尽可能抑制。</strong></font></p>
 <h4 id="2、微带滤波器及其转换电路"><a href="#2、微带滤波器及其转换电路" class="headerlink" title="2、微带滤波器及其转换电路"></a>2、微带滤波器及其转换电路</h4><p>一些频率较低，指标要求较低的滤波器是基于微带传输线的。设计简单，加工成本较低，且相较于波导滤波器有更小的体积。</p>
-<p>1）12.15~14 GHz 滤波器：抑制频率源的二次谐波，同时用于上下变频通道的基波本振滤波。</p>
-<p>由于平行耦合线滤波器的奇偶模相速不一致，从而导致在<strong>2f****0</strong> 处有寄生通带，这使得其在频率变换电路中的使用受到限制。本课题将在<strong>平行耦合线</strong>的基础上采用<strong>过耦合结构</strong>抑制二次谐波的通带。</p>
-<p>（过耦合结构通过改变奇偶模等效电长度，实现在<strong>2f0</strong> <strong>处引入零点</strong>，2f0 处的|S21|&#x3D;0）</p>
-<p><strong>0.127 mm</strong> <strong>的****Al2O3</strong> <strong>基板</strong>实现：滤波器工作频段为12~14 GHz，带内回波损耗大于20 dB，对二次谐波的抑制大于40 dBc。</p>
-<ol start="2">
-<li>8 GHz 滤波器设计：保证频率源提供的8GHz中频频谱纯净，同时对二次谐波有抑制</li>
-<li></li>
-</ol>
-<h3 id="（四）电路实现及测试结果"><a href="#（四）电路实现及测试结果" class="headerlink" title="（四）电路实现及测试结果"></a>（四）电路实现及测试结果</h3><h2 id="二、测试前端设计"><a href="#二、测试前端设计" class="headerlink" title="二、测试前端设计"></a>二、测试前端设计</h2><h3 id="（一）测试系统配置"><a href="#（一）测试系统配置" class="headerlink" title="（一）测试系统配置"></a>（一）测试系统配置</h3><h3 id="（二）方案实现"><a href="#（二）方案实现" class="headerlink" title="（二）方案实现"></a>（二）方案实现</h3><h3 id="（三）测试"><a href="#（三）测试" class="headerlink" title="（三）测试"></a>（三）测试</h3>
+<table>
+<thead>
+<tr>
+<th align="center">微带滤波器</th>
+<th align="center">性能设计</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">12.15~14 GHz 滤波器</td>
+<td align="center">抑制频率源的二次谐波，同时用于上下变频通道的基波本振滤波。</td>
+</tr>
+<tr>
+<td align="center">8 GHz 滤波器设计</td>
+<td align="center">保证频率源提供的8GHz中频频谱纯净，同时对二次谐波有抑制。</td>
+</tr>
+<tr>
+<td align="center">微带-波导过渡结构</td>
+<td align="center">使用<strong>鳍线</strong>结构，其具有插入损耗低、回波损耗大、频带宽和利于模块集成的优点。<img src="/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p6.png" alt="1"></td>
+</tr>
+</tbody></table>
+<p>**（1）12.15~14 GHz 滤波器：**抑制频率源的二次谐波，同时用于上下变频通道的基波本振滤波。</p>
+<p>**（2）8 GHz 滤波器设计：**保证频率源提供的8GHz中频频谱纯净，同时对二次谐波有抑制。</p>
+<p><strong>（3）微带-波导过渡结构：<strong>使用</strong>鳍线</strong>结构，其具有插入损耗低、回波损耗大、频带宽和利于模块集成的优点。</p>
+<p><img src="/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p6.png" alt="1"></p>
+<h3 id="（四）电路实现及测试结果"><a href="#（四）电路实现及测试结果" class="headerlink" title="（四）电路实现及测试结果"></a>（四）电路实现及测试结果</h3><h4 id="1、链路验证"><a href="#1、链路验证" class="headerlink" title="1、链路验证"></a>1、链路验证</h4><p>将设计的无源电路S参数导入ADS进行仿真验证：</p>
+<p>上变频通道：输出81 GHz 信号时，信号功率和基波本振的七次谐波之间相差约62 dBc，当减小输出信号功率为0 dBm 时，仍可以保证对本振泄露的抑制超过40 dBc，满足对本振泄露抑制大于30 dBc 的指标要求。另外，混频后的三阶交调分量89 GHz 和78GHz 都被抑制在100 dBc 以上</p>
+<p>上下变频通道级联：输出中频为2.1 GHz，整个链路输出频谱纯净，在输出大于0 dBm 的情况下对杂散抑制超过100 dBc。</p>
+<h4 id="2、上变频通道"><a href="#2、上变频通道" class="headerlink" title="2、上变频通道"></a>2、上变频通道</h4><p><img src="/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p7.png" alt="1"></p>
+<h4 id="3、下变频通道"><a href="#3、下变频通道" class="headerlink" title="3、下变频通道"></a>3、下变频通道</h4><p><img src="/2025/05/24/E%E6%B3%A2%E6%AE%B5%E5%8A%9F%E6%94%BE%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F/p8.png" alt="1"></p>
+<h2 id="二、测试前端设计"><a href="#二、测试前端设计" class="headerlink" title="二、测试前端设计"></a>二、测试前端设计</h2><h3 id="（一）测试系统配置"><a href="#（一）测试系统配置" class="headerlink" title="（一）测试系统配置"></a>（一）测试系统配置</h3><h3 id="（二）方案实现"><a href="#（二）方案实现" class="headerlink" title="（二）方案实现"></a>（二）方案实现</h3><h3 id="（三）测试"><a href="#（三）测试" class="headerlink" title="（三）测试"></a>（三）测试</h3>
     
 
     
