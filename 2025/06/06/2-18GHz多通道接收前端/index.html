@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://tingtingeva.github.io/2025/06/06/2-18GHz%E5%A4%9A%E9%80%9A%E9%81%93%E6%8E%A5%E6%94%B6%E5%89%8D%E7%AB%AF/p21.png">
 <meta property="og:image" content="https://tingtingeva.github.io/2025/06/06/2-18GHz%E5%A4%9A%E9%80%9A%E9%81%93%E6%8E%A5%E6%94%B6%E5%89%8D%E7%AB%AF/p22.png">
 <meta property="article:published_time" content="2025-06-06T02:53:12.000Z">
-<meta property="article:modified_time" content="2025-06-10T13:57:28.020Z">
+<meta property="article:modified_time" content="2025-06-10T14:02:38.498Z">
 <meta property="article:author" content="Eva">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tingtingeva.github.io/2025/06/06/2-18GHz%E5%A4%9A%E9%80%9A%E9%81%93%E6%8E%A5%E6%94%B6%E5%89%8D%E7%AB%AF/p1.png">
@@ -433,7 +433,7 @@
 <p><strong><code>解决方法</code></strong>：舍弃SMA线缆连接的方式，改为由<font color=red><strong>SMP 射频座直插互连</strong></font>（在HFSS中对SMP射频绝缘子模型进行仿真，验证其可以满足要求），同时修改<font color=red><strong>电路布局和腔体结构</strong></font>：将LO1和LO2的<strong>三级功分电路</strong>分别布置在微波接收模块的正面和背面以得到更紧凑的布局和得到更稳定的通道相位一致性；在中频和控制模块采用<strong>SEAF多功能排插</strong>输入外部控制信号和输出五路差分中频信号。</p>
 <p>改进后的电路如下：</p>
 <p><img src="/2025/06/06/2-18GHz%E5%A4%9A%E9%80%9A%E9%81%93%E6%8E%A5%E6%94%B6%E5%89%8D%E7%AB%AF/p21.png" alt="1"></p>
-<p>改进后腔体布局如下：微波接收模块位于正上方，天线接收到的信号通过<strong>电缆</strong>和<strong>SMA</strong> <strong>接头</strong>输入到微波接收模块内，经过两次变频后得到<strong>中频信号</strong>，通过<strong>SMA接头</strong>输出；频率源模块位于微波接收模块下方，与微波接收模块通过<strong>SMP</strong>射频座<strong>直插互连</strong>；中频与控制模块位于最下方，控制信号和五路差分中频信号通过<strong>SEAF多功能排插</strong>与外部相连。</p>
+<p>改进后整机装配布局如下：微波接收模块位于正上方，天线接收到的信号通过<strong>电缆</strong>和<strong>SMA</strong> <strong>接头</strong>输入到微波接收模块内，经过两次变频后得到<strong>中频信号</strong>，通过<strong>SMA接头</strong>输出；频率源模块位于微波接收模块下方，与微波接收模块通过<strong>SMP</strong>射频座<strong>直插互连</strong>；中频与控制模块位于最下方，控制信号和五路差分中频信号通过<strong>SEAF多功能排插</strong>与外部相连。</p>
 <p><img src="/2025/06/06/2-18GHz%E5%A4%9A%E9%80%9A%E9%81%93%E6%8E%A5%E6%94%B6%E5%89%8D%E7%AB%AF/p22.png" alt="1"></p>
 <p><strong><code>测试</code></strong>：五路通道相位误差最大值为11.6°，并且多次复测结果一致，不再受硬件连接状态影响。</p>
 
